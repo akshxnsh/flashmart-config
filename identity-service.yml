@@ -1,0 +1,8 @@
+# Tunable values for identity-service. Same rules as order-service.yml.
+# identity.jwt.secret is NOT here: it comes from the JWT_SECRET env var only.
+identity:
+  password:
+    bcrypt-strength: 10
+  jwt:
+    access-ttl: 15m
+    refresh-ttl: 7d

@@ -1,0 +1,39 @@
+# Tunable values for order-service. Served by config-server (port 8888).
+# Values here equal order-service's own local application.yml, which stays as
+# the fallback. NO secrets, DB settings, ports or addresses in this repo.
+# All values PROVISIONAL, unmeasured (FlashMart decisions.md, Day 5, Day 7).
+
+inventory:
+  connect-timeout-ms: 1000
+  reserve-timeout-ms: 2000
+
+payment:
+  connect-timeout-ms: 1000
+  read-timeout-ms: 2000
+  attempts: 2
+  wait-ms: 500
+  breaker:
+    window-size: 10
+    minimum-calls: 5
+    failure-rate-percent: 50
+    open-ms: 10000
+    half-open-calls: 3
+
+order:
+  fee: 49.00
+  payment-window-ms: 360000
+  create:
+    max-blocking-time-ms: 60000
+    deadline-margin-ms: 5000
+  sweep:
+    enabled: true
+    interval-ms: 30000
+    batch-size: 100
+    max-passes-per-tick: 10
+
+outbox:
+  relay:
+    enabled: true
+    poll-ms: 1000
+    batch-size: 50
+    ack-timeout-ms: 5000

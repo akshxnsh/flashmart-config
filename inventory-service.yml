@@ -1,0 +1,6 @@
+# Tunable values for inventory-service. Same rules as order-service.yml.
+kafka:
+  consumer:
+    backoff-initial-ms: 1000
+    backoff-multiplier: 2.0
+    backoff-max-ms: 30000
