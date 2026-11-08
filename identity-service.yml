@@ -4,5 +4,5 @@ identity:
   password:
     bcrypt-strength: 10
   jwt:
-    access-ttl: 15m
+    access-ttl: 16m
     refresh-ttl: 7d
